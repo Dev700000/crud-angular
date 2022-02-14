@@ -1,0 +1,22 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Acciones</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleado of Empleados; let iControl=index"> 
+      <th scope="row">{{empleado.sexo}}</th>
+      <td>{{empleado.nombre}}</td>
+      <td>{{empleado.edad}}</td>
+      <td><a class="btn btn-info" routerLink="/editar-empleado/{{empleado.id}}">Editar</a></td>
+  <td><a class="btn btn-danger" (click)="borrarRegistro(empleado.id,iControl)">Eliminar</a></td>
+    </tr>
+   
+  </tbody>
+</table>
